@@ -1,0 +1,148 @@
+/* ============================================
+   NODES Sidebar — Premium Expandable Rail
+   ============================================ */
+:root{--rail-w:56px;--rail-w-exp:240px}
+
+/* ===== BASE RAIL ===== */
+.rail{
+  position:fixed;top:0;left:0;bottom:0;width:var(--rail-w);
+  background:var(--white,#FFF);
+  border-right:1px solid var(--ink-7,#E2E8F0);
+  display:flex;flex-direction:column;
+  padding:0;z-index:10;
+  transition:width .28s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  box-shadow:0 0 0 0 rgba(0,0,0,0);
+  /* Ensure all color vars are available inside sidebar */
+  --white:#FFF;--ink:#0F172A;--ink-2:#1E293B;--ink-3:#334155;
+  --ink-4:#64748B;--ink-5:#94A3B8;--ink-6:#CBD5E1;
+  --ink-7:#E2E8F0;--ink-8:#F1F5F9;--ink-9:#F8FAFC;
+  --teal:#0D9488;--teal-surface:#F0FDFA;
+}
+.rail.expanded{width:var(--rail-w-exp)!important;box-shadow:4px 0 24px rgba(15,23,42,.04)}
+
+/* ===== LOGO ===== */
+.rail-logo{
+  display:flex;align-items:center;
+  padding:16px 14px 12px;min-height:52px;
+  white-space:nowrap;border-bottom:1px solid var(--ink-7,#E2E8F0);
+  margin-bottom:8px;text-decoration:none;
+  font-size:1.25rem;font-weight:800;letter-spacing:-.04em;
+  color:var(--ink,#0F172A);
+  transition:color .2s;
+}
+.rail-logo:hover{color:var(--teal,#0D9488)}
+.logo-dot{color:var(--teal,#0D9488)}
+.rail-logo-text{
+  font-size:inherit;font-weight:inherit;letter-spacing:inherit;
+  color:inherit;
+  display:inline;max-width:0;overflow:hidden;
+  transition:max-width .28s cubic-bezier(.4,0,.2,1);
+}
+.rail.expanded .rail-logo-text{max-width:120px}
+
+/* ===== SECTION LABEL ===== */
+.rail-section{
+  font-size:.5625rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-5,#94A3B8);padding:12px 18px 6px;
+  opacity:0;height:0;overflow:hidden;transition:all .2s;
+}
+.rail.expanded .rail-section{opacity:1;height:auto;transition:all .2s .12s}
+
+/* ===== NAV ===== */
+.rail-nav{flex:1;display:flex;flex-direction:column;gap:2px;padding:0 8px;overflow-y:auto;overflow-x:hidden;min-height:0}
+
+/* ===== NAV ITEMS ===== */
+.rail .rail-item{
+  position:relative;display:flex;align-items:center;gap:12px;
+  height:40px;min-height:40px;border-radius:10px;padding:0 8px;
+  color:#64748B!important;transition:all .15s cubic-bezier(.4,0,.2,1);
+  white-space:nowrap;font-size:.8125rem;font-weight:500;
+  text-decoration:none;
+}
+.rail .rail-item:link,.rail .rail-item:visited{color:#64748B!important}
+.rail .rail-item svg{flex-shrink:0;width:20px!important;height:20px!important;stroke:currentColor!important;color:inherit;overflow:visible}
+.rail .rail-item:hover{color:#1E293B!important;background:#F1F5F9}
+
+/* Active state — left accent bar + teal bg */
+.rail .rail-item.active,
+.rail .rail-item.active:link,
+.rail .rail-item.active:visited{
+  color:#0D9488!important;background:#F0FDFA!important;
+  font-weight:600;
+}
+.rail-item.active::before{
+  content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;
+  border-radius:0 3px 3px 0;background:#0D9488;
+}
+
+/* ===== LABELS ===== */
+.rail-label{
+  font-size:.8125rem;font-weight:inherit;
+  opacity:0;transition:opacity .15s;pointer-events:none;
+}
+.rail.expanded .rail-label{opacity:1;pointer-events:auto;transition:opacity .18s .14s}
+
+/* ===== TOOLTIP (collapsed only) ===== */
+.rail-item::after{
+  content:attr(data-tooltip);position:absolute;left:calc(var(--rail-w) + 4px);top:50%;
+  transform:translateY(-50%) scale(.96);padding:6px 12px;border-radius:8px;
+  background:var(--ink,#0F172A);color:var(--white,#FFF);
+  font-size:.6875rem;font-weight:600;letter-spacing:.01em;
+  white-space:nowrap;opacity:0;pointer-events:none;
+  transition:all .15s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 4px 16px rgba(15,23,42,.18);z-index:20;
+}
+.rail-item:hover::after{opacity:1;transform:translateY(-50%) scale(1)}
+.rail.expanded .rail-item::after{display:none}
+
+/* ===== DIVIDER ===== */
+.rail-divider{
+  height:1px;background:var(--ink-7,#E2E8F0);margin:8px 14px;flex-shrink:0;
+}
+
+/* ===== FOOTER ===== */
+.rail-foot{
+  margin-top:auto;display:flex;flex-direction:column;gap:2px;
+  padding:0 8px;border-top:1px solid var(--ink-7,#E2E8F0);
+  padding-top:8px;margin-top:8px;
+}
+
+/* Avatar row */
+.rail-avatar-row{
+  display:flex;align-items:center;gap:10px;padding:8px;
+  border-radius:10px;transition:background .15s;
+  white-space:nowrap;overflow:hidden;
+}
+.rail-avatar-row:hover{background:var(--ink-8,#F1F5F9)}
+.rail-avatar{width:32px;height:32px;border-radius:10px;overflow:hidden;flex-shrink:0}
+.rail-avatar svg{width:100%;height:100%}
+.rail-avatar-info{display:flex;flex-direction:column;opacity:0;transition:opacity .15s;pointer-events:none}
+.rail.expanded .rail-avatar-info{opacity:1;pointer-events:auto;transition:opacity .18s .14s}
+.rail-avatar-name{font-size:.75rem;font-weight:700;color:var(--ink,#0F172A);line-height:1.2}
+.rail-avatar-role{font-size:.625rem;color:var(--ink-5,#94A3B8);line-height:1.2}
+
+/* ===== TOGGLE BUTTON ===== */
+.rail .rail-toggle{
+  display:flex!important;align-items:center!important;justify-content:center!important;gap:10px;
+  width:36px;height:36px;min-height:36px;border-radius:10px;padding:0;
+  color:#64748B!important;transition:all .15s;cursor:pointer;
+  border:1.5px solid #E2E8F0!important;background:#FFF!important;
+  font-family:inherit;white-space:nowrap;
+  margin:0 auto 4px;flex-shrink:0;
+}
+.rail.expanded .rail-toggle{
+  width:100%;justify-content:flex-start;padding:0 10px;
+  border:none!important;background:none!important;margin:0 0 4px;
+}
+.rail .rail-toggle:hover{color:#0D9488!important;background:#F1F5F9!important;border-color:#0D9488!important}
+.rail .rail-toggle svg{flex-shrink:0;width:18px;height:18px;stroke:currentColor!important;transition:transform .28s cubic-bezier(.4,0,.2,1)}
+.rail.expanded .rail-toggle svg{transform:rotate(180deg)}
+.rail-toggle .rail-label{font-size:.75rem;font-weight:600}
+
+/* ===== MAIN CONTENT OFFSET ===== */
+.main,.workspace{transition:margin-left .28s cubic-bezier(.4,0,.2,1)!important}
+.rail.expanded ~ .main,
+.rail.expanded ~ * .main,
+.rail.expanded ~ .workspace,
+.rail.expanded ~ * .workspace{margin-left:var(--rail-w-exp)!important}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NODES — Platform e-learning interaktif untuk mata kuliah UI/UX Design. Belajar teori, praktik di canvas, dan kolaborasi dalam satu ekosistem.">
+  <title>NODES — Platform E-Learning UI/UX Interaktif</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="#" class="nav-logo">nodes<span class="logo-dot">.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#challenge">Masalah</a>
+        <a href="#bento">Fitur</a>
+        <a href="#process">Cara Kerja</a>
+        <a href="#proof">Testimoni</a>
+      </div>
+      <a href="../auth/index.html" class="nav-cta" data-hover>Mulai Belajar</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <canvas class="hero-particles" id="heroParticles"></canvas>
+
+    <div class="container">
+      <div class="hero-eyebrow" data-reveal>
+        <span class="pulse"></span>
+        E-Learning UI/UX · Teknik Informatika ITI
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span class="line-inner">Belajar desain</span></span>
+        <span class="line"><span class="line-inner">bukan cuma <em class="em">membaca</em>,</span></span>
+        <span class="line"><span class="line-inner">tapi <em class="em">membangun</em>.</span></span>
+      </h1>
+
+      <p class="hero-desc" data-reveal>
+        NODES menyatukan modul teori, canvas interaktif, dan ruang kolaborasi dalam satu platform — sehingga kamu bisa langsung praktik sambil belajar prinsip UI/UX.
+      </p>
+
+      <div class="hero-actions" data-reveal>
+        <a href="../auth/index.html" class="btn-main" data-hover>
+          <span>Coba Sekarang — Gratis</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#bento" class="btn-outline" data-hover>Eksplorasi Fitur</a>
+      </div>
+
+      <div class="hero-metrics" data-reveal>
+        <div class="hero-metric">
+          <div class="val"><span class="accent" data-count="500">0</span>+</div>
+          <div class="label">Mahasiswa Aktif</div>
+        </div>
+        <div class="hero-metric">
+          <div class="val"><span class="accent" data-count="16">0</span></div>
+          <div class="label">Sesi Perkuliahan</div>
+        </div>
+        <div class="hero-metric">
+          <div class="val"><span class="accent" data-count="8">0</span></div>
+          <div class="label">Proyek Praktik</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="dot"></span>Pengantar UX</span>
+      <span class="marquee-item"><span class="dot"></span>Analisis Pengguna</span>
+      <span class="marquee-item"><span class="dot"></span>Information Architecture</span>
+      <span class="marquee-item"><span class="dot"></span>Wireframing</span>
+      <span class="marquee-item"><span class="dot"></span>Color Theory</span>
+      <span class="marquee-item"><span class="dot"></span>Typography</span>
+      <span class="marquee-item"><span class="dot"></span>Visual Hierarchy</span>
+      <span class="marquee-item"><span class="dot"></span>Design System</span>
+      <span class="marquee-item"><span class="dot"></span>Prototyping</span>
+      <span class="marquee-item"><span class="dot"></span>Usability Testing</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-item"><span class="dot"></span>Pengantar UX</span>
+      <span class="marquee-item"><span class="dot"></span>Analisis Pengguna</span>
+      <span class="marquee-item"><span class="dot"></span>Information Architecture</span>
+      <span class="marquee-item"><span class="dot"></span>Wireframing</span>
+      <span class="marquee-item"><span class="dot"></span>Color Theory</span>
+      <span class="marquee-item"><span class="dot"></span>Typography</span>
+      <span class="marquee-item"><span class="dot"></span>Visual Hierarchy</span>
+      <span class="marquee-item"><span class="dot"></span>Design System</span>
+      <span class="marquee-item"><span class="dot"></span>Prototyping</span>
+      <span class="marquee-item"><span class="dot"></span>Usability Testing</span>
+    </div>
+  </div>
+
+  <!-- ========== CHALLENGE ========== -->
+  <section class="challenge" id="challenge">
+    <div class="container">
+      <div class="challenge-grid">
+        <div class="challenge-left" data-reveal>
+          <div class="challenge-tag">Tantangan Nyata</div>
+          <h2 class="challenge-heading">E-Learning konvensional tidak dirancang untuk desainer.</h2>
+          <p class="challenge-body">Mahasiswa UI/UX butuh lebih dari sekedar slide dan PDF. Mereka butuh ruang untuk bereksperimen, gagal, dan belajar melalui praktik langsung.</p>
+        </div>
+
+        <div class="challenge-cards">
+          <div class="challenge-card" data-reveal>
+            <div class="challenge-card-num">01</div>
+            <h3>Teks statis, nol simulasi</h3>
+            <p>Platform belajar yang ada hanya menyediakan materi bacaan. Tidak ada ruang untuk mencoba membuat layout, bermain warna, atau merasakan prinsip desain secara langsung.</p>
+          </div>
+          <div class="challenge-card" data-reveal>
+            <div class="challenge-card-num">02</div>
+            <h3>Tools terfragmentasi</h3>
+            <p>Baca materi di LMS, praktik di Figma, kirim tugas di email, feedback di WhatsApp. Alur yang terpecah ini menghabiskan waktu dan fokus mahasiswa.</p>
+          </div>
+          <div class="challenge-card" data-reveal>
+            <div class="challenge-card-num">03</div>
+            <h3>Feedback yang terlambat</h3>
+            <p>Umpan balik desain baru datang berhari-hari kemudian. Pada saat itu, mahasiswa sudah lupa konteks dan harus mengulang dari awal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENTO FEATURES ========== -->
+  <section class="bento" id="bento">
+    <div class="container">
+      <div class="bento-header" data-reveal>
+        <div class="bento-tag">Solusi</div>
+        <h2 class="bento-title">Satu platform.<br><em class="em">Semua yang kamu butuhkan.</em></h2>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Card 1: Integrated Learning -->
+        <div class="bento-card bento-card-1" data-reveal>
+          <div class="bento-card-tag">Integrated Learning</div>
+          <h3>Teori dan praktik,<br>berdampingan.</h3>
+          <p>Modul pembelajaran ditampilkan tepat di sebelah canvas kerja. Baca konsep visual hierarchy, lalu langsung aplikasikan — tanpa berpindah tab.</p>
+          <div class="bento-visual">
+            <svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#F8FAFC;">
+              <rect x="0" y="0" width="280" height="200" fill="#FFF"/>
+              <rect x="20" y="20" width="100" height="8" rx="4" fill="#0D9488" opacity=".2"/>
+              <rect x="20" y="40" width="240" height="6" rx="3" fill="#E2E8F0"/>
+              <rect x="20" y="54" width="200" height="6" rx="3" fill="#E2E8F0"/>
+              <rect x="20" y="68" width="220" height="6" rx="3" fill="#E2E8F0"/>
+              <rect x="20" y="92" width="60" height="24" rx="6" fill="#F0FDFA" stroke="#0D9488" stroke-width="1"/>
+              <rect x="88" y="92" width="60" height="24" rx="6" fill="#F0FDFA" stroke="#0D9488" stroke-width="1"/>
+              <rect x="156" y="92" width="60" height="24" rx="6" fill="#F0FDFA" stroke="#0D9488" stroke-width="1"/>
+              <rect x="20" y="132" width="240" height="28" rx="8" fill="#F0FDFA" stroke="#0D9488" stroke-width="1"/>
+              <circle cx="34" cy="146" r="6" fill="#0D9488"/>
+              <rect x="46" y="142" width="60" height="8" rx="4" fill="#0D9488" opacity=".6"/>
+              <rect x="20" y="168" width="240" height="28" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+              <line x1="280" y1="0" x2="280" y2="200" stroke="#E2E8F0"/>
+              <rect x="280" y="0" width="280" height="200" fill="#F8FAFC"/>
+              <rect x="300" y="16" width="48" height="16" rx="8" fill="#0D9488"/>
+              <text x="310" y="28" font-family="Inter,sans-serif" font-size="8" fill="white" font-weight="600">Canvas</text>
+              <rect x="300" y="44" width="240" height="140" rx="8" fill="#FFF" stroke="#E2E8F0"/>
+              <rect x="316" y="58" width="80" height="28" rx="4" fill="#0D9488" opacity=".1" stroke="#0D9488" stroke-width="1" stroke-dasharray="3"/>
+              <rect x="316" y="94" width="40" height="60" rx="4" fill="#14B8A6" opacity=".1" stroke="#14B8A6" stroke-width="1"/>
+              <rect x="364" y="94" width="40" height="60" rx="4" fill="#0F766E" opacity=".1" stroke="#0F766E" stroke-width="1"/>
+              <rect x="412" y="58" width="60" height="40" rx="4" fill="#E2E8F0"/>
+              <rect x="316" y="164" width="160" height="16" rx="4" fill="#0D9488"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 2: Canvas Interaktif -->
+        <div class="bento-card bento-card-2" data-reveal>
+          <div class="bento-card-tag">Canvas Interaktif</div>
+          <h3>Eksperimen visual secara instan.</h3>
+          <p>Coba grid layout, atur warna, geser elemen — rasakan prinsip desain melalui tangan kamu sendiri.</p>
+          <div class="mini-canvas">
+            <div class="mini-canvas-block"></div>
+            <div class="mini-canvas-block"></div>
+            <div class="mini-canvas-block"></div>
+            <div class="mini-canvas-block"></div>
+            <div class="mini-canvas-block"></div>
+            <div class="mini-canvas-block"></div>
+          </div>
+        </div>
+
+        <!-- Card 3: Feedback Real-time -->
+        <div class="bento-card bento-card-3" data-reveal>
+          <div class="bento-card-tag">Real-time Feedback</div>
+          <h3>Feedback instan, langsung di desain.</h3>
+          <p>Dosen memberi komentar langsung di atas elemen yang kamu buat. Tidak perlu menunggu hari.</p>
+        </div>
+
+        <!-- Card 4: Kolaborasi -->
+        <div class="bento-card bento-card-4" data-reveal>
+          <div class="bento-card-tag">Ruang Kolaborasi</div>
+          <h3>Desain bersama,<br>berkembang bersama.</h3>
+          <p>Anotasi, komentar, dan review — semua terjadi di satu tempat. Mahasiswa dan dosen bekerja dalam satu ekosistem yang sama.</p>
+          <div class="bento-visual">
+            <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#1E293B;">
+              <circle cx="32" cy="32" r="14" fill="#0D9488"/>
+              <text x="32" y="37" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="white" font-weight="600">D</text>
+              <rect x="54" y="18" width="160" height="28" rx="10" fill="#334155"/>
+              <text x="66" y="36" font-family="Inter,sans-serif" font-size="9" fill="#94A3B8">Coba perbesar kontras di sini</text>
+              <circle cx="32" cy="80" r="14" fill="#14B8A6"/>
+              <text x="32" y="85" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="white" font-weight="600">M</text>
+              <rect x="54" y="66" width="200" height="28" rx="10" fill="#334155"/>
+              <text x="66" y="84" font-family="Inter,sans-serif" font-size="9" fill="#94A3B8">Sudah saya update, bagaimana?</text>
+              <circle cx="272" y="80" r="6" fill="#10B981"/>
+              <rect x="340" y="70" width="48" height="20" rx="10" fill="#0D9488"/>
+              <text x="350" y="84" font-family="Inter,sans-serif" font-size="8" fill="white" font-weight="600">Reply</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-header" data-reveal>
+        <div class="process-tag">Cara Kerja</div>
+        <h2 class="process-title">Empat langkah menuju mahir.</h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step" data-reveal>
+          <div class="process-step-dot" data-hover><span class="num">01</span></div>
+          <h3>Daftar dengan email kampus</h3>
+          <p>Buat akun gratis menggunakan email ITI. Akses 16 sesi materi UI/UX sesuai kurikulum RPS.</p>
+        </div>
+        <div class="process-step" data-reveal>
+          <div class="process-step-dot" data-hover><span class="num">02</span></div>
+          <h3>Ikuti modul terstruktur</h3>
+          <p>Dari Pengantar UX, Analisis Pengguna, Wireframing, hingga Prototyping — semuanya tersusun per sesi.</p>
+        </div>
+        <div class="process-step" data-reveal>
+          <div class="process-step-dot" data-hover><span class="num">03</span></div>
+          <h3>Praktik di canvas interaktif</h3>
+          <p>Bangun wireframe, color palette, dan design system langsung di canvas — tanpa perlu tool terpisah.</p>
+        </div>
+        <div class="process-step" data-reveal>
+          <div class="process-step-dot" data-hover><span class="num">04</span></div>
+          <h3>Review & kolaborasi</h3>
+          <p>Dosen dan teman sekelas memberi feedback langsung di desainmu. Iterasi, perbaiki, berkembang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL PROOF ========== -->
+  <section class="social-proof" id="proof">
+    <div class="container">
+      <blockquote class="proof-quote" data-reveal>
+        "Sebelum NODES, saya harus buka <em class="em">lima aplikasi berbeda</em> hanya untuk mengerjakan satu tugas UI. Sekarang, semua proses — dari baca materi sampai submit desain — <em class="em">terjadi di satu tempat</em>. Ini game-changer."
+      </blockquote>
+      <div class="proof-author" data-reveal>
+        <div class="proof-avatar">AP</div>
+        <div class="proof-meta">
+          <h4>Andi Pratama</h4>
+          <span>Mahasiswa Teknik Informatika ITI — Semester 5</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta" id="cta">
+    <div class="cta-grid-bg"></div>
+    <div class="cta-glow"></div>
+    <div class="container">
+      <div class="cta-content" data-reveal>
+        <h2 class="cta-title">Siap membangun,<br>bukan cuma <em class="em">membaca</em>?</h2>
+        <p class="cta-desc">Gabung dengan 500+ mahasiswa ITI yang sudah belajar UI/UX secara interaktif. Gratis, tanpa kartu kredit.</p>
+        <div class="cta-actions">
+          <a href="../auth/index.html" class="btn-white" data-hover>
+            Mulai Sekarang
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="btn-ghost" data-hover>Hubungi Tim Kami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">nodes<span class="logo-dot">.</span></a>
+          <p>Platform e-learning UI/UX interaktif untuk mahasiswa Teknik Informatika, Institut Teknologi Indonesia.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <a href="#bento">Fitur</a>
+          <a href="#process">Cara Kerja</a>
+          <a href="../modules/index.html">Modul</a>
+          <a href="#">Kurikulum</a>
+        </div>
+        <div class="footer-col">
+          <h5>Sumber Daya</h5>
+          <a href="#">Dokumentasi</a>
+          <a href="#">Tutorial</a>
+          <a href="#">Blog</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontak</h5>
+          <a href="#">nodes@iti.ac.id</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NODES — Institut Teknologi Indonesia</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP + Lenis + Smooth Scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+nodes-ads/out/
+nodes-ads/node_modules/
+nodes-ads/package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Raw materials (large files)
+_raw/
+
+# Temp
+*.tmp
+*.log

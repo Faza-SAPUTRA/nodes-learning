@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NODES — Modul Belajar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../../assets/css/sidebar.css">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- NODES Sidebar -->
+    <aside class="rail">
+      <a href="../landing/index.html" class="rail-logo">n<span class="rail-logo-text">odes</span><span class="logo-dot">.</span></a>
+      <div class="rail-section">Menu</div>
+      <nav class="rail-nav">
+        <a href="../dashboard/index.html" class="rail-item" data-tooltip="Dashboard"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg><span class="rail-label">Dashboard</span></a>
+        <a href="../modules/index.html" class="rail-item active" data-tooltip="Modul Belajar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><span class="rail-label">Modul Belajar</span></a>
+        <a href="../canvas/index.html" class="rail-item" data-tooltip="Canvas"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg><span class="rail-label">Canvas Praktik</span></a>
+        <a href="../collab/index.html" class="rail-item" data-tooltip="Kolaborasi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="rail-label">Kolaborasi</span></a>
+      </nav>
+      <div class="rail-foot">
+        <button class="rail-toggle" aria-label="Toggle sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg><span class="rail-label">Tutup Menu</span></button>
+        <div class="rail-divider"></div>
+        <a href="../profile/index.html" class="rail-avatar-row" data-tooltip="Profil">
+          <div class="rail-avatar"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#0D9488"/><text x="18" y="23" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="13" font-weight="700">AP</text></svg></div>
+          <div class="rail-avatar-info"><span class="rail-avatar-name">Andi Prasetyo</span><span class="rail-avatar-role">Mahasiswa</span></div>
+        </a>
+      </div>
+    </aside>
+    <script src="../../assets/js/sidebar.js"></script>
+
+    <!-- MAIN -->
+    <main class="main" id="main">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <button class="topbar-menu" id="topbarMenu" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+        <div class="topbar-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" placeholder="Cari modul..." id="searchInput">
+          <kbd>⌘K</kbd>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-icon" aria-label="Notifikasi">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            <span class="topbar-notif-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="content">
+
+        <!-- Page header -->
+        <div class="page-header" data-reveal>
+          <div class="ph-text">
+            <h1>Modul Belajar</h1>
+            <p>Kurikulum UI/UX Design terstruktur — 16 sesi, sesuai RPS IF25504.</p>
+          </div>
+          <div class="ph-stats">
+            <div class="ph-stat">
+              <span class="ph-stat-num">8</span>
+              <span class="ph-stat-label">Selesai</span>
+            </div>
+            <div class="ph-stat-divider"></div>
+            <div class="ph-stat">
+              <span class="ph-stat-num">50<small>%</small></span>
+              <span class="ph-stat-label">Progress</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="filter-bar" data-reveal>
+          <button class="filter-tab active" data-filter="all">Semua</button>
+          <button class="filter-tab" data-filter="foundation">Fondasi</button>
+          <button class="filter-tab" data-filter="core">Inti</button>
+          <button class="filter-tab" data-filter="advanced">Lanjutan</button>
+          <button class="filter-tab" data-filter="project">Proyek</button>
+          <button class="filter-tab" data-filter="eval">Evaluasi</button>
+        </div>
+
+        <!-- Learning Path — Visual Track -->
+        <div class="learning-path" data-reveal>
+          <div class="lp-track">
+            <div class="lp-line"><div class="lp-line-fill" id="lpLineFill"></div></div>
+          </div>
+        </div>
+
+        <!-- Module List -->
+        <div class="module-list" id="moduleList">
+
+          <!-- Sesi 1 -->
+          <div class="mod-card done" data-category="foundation" data-reveal>
+            <div class="mod-num"><span>01</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-foundation">Fondasi</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">Pengantar UI/UX & HCI</h3>
+              <p class="mod-desc">Pendahuluan UI/UX, Interaksi Manusia & Komputer (HCI), Prinsip Usability, Design Thinking Framework.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">4 sub-bab · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">🎯</span>
+              </div>
+              <div class="mod-weight">Bobot: 0%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 2 -->
+          <div class="mod-card done" data-category="foundation" data-reveal>
+            <div class="mod-num"><span>02</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-foundation">Fondasi</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">User Research Methods</h3>
+              <p class="mod-desc">Metodologi User Research (Kualitatif & Kuantitatif), User Interview, Survey, Empathy Map.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">5 sub-bab · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">🔍</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 3 -->
+          <div class="mod-card done" data-category="foundation" data-reveal>
+            <div class="mod-num"><span>03</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-foundation">Fondasi</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">Persona & Journey Mapping</h3>
+              <p class="mod-desc">User Persona, User Journey Mapping, Problem Statement/POV, How Might We (HMW).</p>
+              <div class="mod-footer">
+                <div class="mod-subs">4 sub-bab · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">🗺️</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 4 -->
+          <div class="mod-card done" data-category="foundation" data-reveal>
+            <div class="mod-num"><span>04</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-foundation">Fondasi</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">Information Architecture</h3>
+              <p class="mod-desc">Information Architecture (IA), Card Sorting, User Flow, Sitemap.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">4 sub-bab · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">🏗️</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 5 — Evaluasi -->
+          <div class="mod-card done" data-category="eval" data-reveal>
+            <div class="mod-num"><span>05</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-eval">Evaluasi</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">Kuis Teori — Review Sesi 1–4</h3>
+              <p class="mod-desc">Evaluasi pemahaman fondasi UI/UX: HCI, User Research, Persona, Information Architecture.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">Kuis Kognitif · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">📝</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 6 -->
+          <div class="mod-card done" data-category="core" data-reveal>
+            <div class="mod-num"><span>06</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-core">Inti</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">Wireframing & Sketsa Antarmuka</h3>
+              <p class="mod-desc">Prinsip Sketsa Antarmuka, Crazy Eights, Low-Fidelity Wireframing, Layout & Grid.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">5 sub-bab · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">✏️</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 7 -->
+          <div class="mod-card done" data-category="core" data-reveal>
+            <div class="mod-num"><span>07</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-core">Inti</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">Visual Design Principles</h3>
+              <p class="mod-desc">Typography, Color Theory, Iconography, Spacing, Visual Hierarchy.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">5 sub-bab · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">🎨</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 8 — UTS -->
+          <div class="mod-card done" data-category="eval" data-reveal>
+            <div class="mod-num"><span>08</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-eval">Evaluasi</span>
+                  <span class="mod-tag mod-tag-uts">UTS</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 120 menit</span>
+                </div>
+                <div class="mod-status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <h3 class="mod-title">UTS — Interactive Prototyping</h3>
+              <p class="mod-desc">Interactive Prototyping, Micro-interactions, Smart Animate. Penilaian produk desain Hi-Fi.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">Ujian Praktik · Selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:100%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="100">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">🏆</span>
+              </div>
+              <div class="mod-weight">Bobot: 20%</div>
+              <a href="#" class="mod-btn mod-btn-review">Review</a>
+            </div>
+          </div>
+
+          <!-- Sesi 9 — ACTIVE -->
+          <div class="mod-card active" data-category="advanced" data-reveal>
+            <div class="mod-num"><span>09</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-advanced">Lanjutan</span>
+                  <span class="mod-tag mod-tag-active">Sedang Dipelajari</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-pct">60%</div>
+              </div>
+              <h3 class="mod-title">Design System & Components</h3>
+              <p class="mod-desc">Design System Components, UI Tokens, Auto Layout, Variants, Component Properties.</p>
+              <div class="mod-subbab-list">
+                <div class="mod-sub done"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Apa itu Design System</div>
+                <div class="mod-sub done"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> UI Tokens & Variables</div>
+                <div class="mod-sub done"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Auto Layout Mastery</div>
+                <div class="mod-sub current"><span class="mod-sub-dot"></span> Variants & Properties</div>
+                <div class="mod-sub locked"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="9" x="5" y="11" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Praktik: Build Design System</div>
+              </div>
+              <div class="mod-footer">
+                <div class="mod-subs">5 sub-bab · 3 selesai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:60%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="60">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/><circle cx="24" cy="24" r="20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="50.26" stroke-linecap="round" transform="rotate(-90 24 24)"/></svg>
+                <span class="mod-ring-icon">⚙️</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <a href="#" class="mod-btn mod-btn-continue">Lanjutkan <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Sesi 10 -->
+          <div class="mod-card locked" data-category="advanced" data-reveal>
+            <div class="mod-num"><span>10</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-advanced">Lanjutan</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              </div>
+              <h3 class="mod-title">Usability Testing</h3>
+              <p class="mod-desc">Metodologi Usability Testing, System Usability Scale (SUS), SEQ, Maze/Lookback.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">4 sub-bab · Belum dimulai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="0">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/></svg>
+                <span class="mod-ring-icon">🧪</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <span class="mod-btn mod-btn-locked">Selesaikan modul sebelumnya</span>
+            </div>
+          </div>
+
+          <!-- Sesi 11 -->
+          <div class="mod-card locked" data-category="advanced" data-reveal>
+            <div class="mod-num"><span>11</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-advanced">Lanjutan</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              </div>
+              <h3 class="mod-title">UT Analysis & Iterasi Desain</h3>
+              <p class="mod-desc">Usability Testing Analysis, Severity Ratings, Iterasi Desain Berdasarkan Feedback.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">4 sub-bab · Belum dimulai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="0">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/></svg>
+                <span class="mod-ring-icon">🔄</span>
+              </div>
+              <div class="mod-weight">Bobot: 10%</div>
+              <span class="mod-btn mod-btn-locked">Selesaikan modul sebelumnya</span>
+            </div>
+          </div>
+
+          <!-- Sesi 12 -->
+          <div class="mod-card locked" data-category="advanced" data-reveal>
+            <div class="mod-num"><span>12</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-advanced">Lanjutan</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              </div>
+              <h3 class="mod-title">Design Handoff & Dokumentasi</h3>
+              <p class="mod-desc">Design Handoff, Dokumentasi UI Spec, Assets Export, Pembagian Kebutuhan Dev.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">4 sub-bab · Belum dimulai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="0">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/></svg>
+                <span class="mod-ring-icon">📋</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <span class="mod-btn mod-btn-locked">Selesaikan modul sebelumnya</span>
+            </div>
+          </div>
+
+          <!-- Sesi 13 -->
+          <div class="mod-card locked" data-category="advanced" data-reveal>
+            <div class="mod-num"><span>13</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-advanced">Lanjutan</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              </div>
+              <h3 class="mod-title">Accessibility & UX Ethics</h3>
+              <p class="mod-desc">Accessibility (WCAG 2.1), Color Blindness, Dark Patterns & UX Ethics, Data Privacy.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">4 sub-bab · Belum dimulai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="0">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/></svg>
+                <span class="mod-ring-icon">♿</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <span class="mod-btn mod-btn-locked">Selesaikan modul sebelumnya</span>
+            </div>
+          </div>
+
+          <!-- Sesi 14 -->
+          <div class="mod-card locked" data-category="project" data-reveal>
+            <div class="mod-num"><span>14</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-project">Proyek</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 120 menit</span>
+                </div>
+                <div class="mod-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              </div>
+              <h3 class="mod-title">DesignOps & Peer Feedback</h3>
+              <p class="mod-desc">Design Operations (DesignOps), Manajemen Versi File (Branching), Peer Feedback.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">Proyek · Belum dimulai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="0">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/></svg>
+                <span class="mod-ring-icon">👥</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <span class="mod-btn mod-btn-locked">Selesaikan modul sebelumnya</span>
+            </div>
+          </div>
+
+          <!-- Sesi 15 -->
+          <div class="mod-card locked" data-category="project" data-reveal>
+            <div class="mod-num"><span>15</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-project">Proyek</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 90 menit</span>
+                </div>
+                <div class="mod-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              </div>
+              <h3 class="mod-title">UX Storytelling & Presentasi</h3>
+              <p class="mod-desc">UX Storytelling, Teknik Presentasi Produk, Design Pitching.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">Proyek · Belum dimulai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="0">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/></svg>
+                <span class="mod-ring-icon">🎤</span>
+              </div>
+              <div class="mod-weight">Bobot: 5%</div>
+              <span class="mod-btn mod-btn-locked">Selesaikan modul sebelumnya</span>
+            </div>
+          </div>
+
+          <!-- Sesi 16 — UAS -->
+          <div class="mod-card locked" data-category="eval" data-reveal>
+            <div class="mod-num"><span>16</span></div>
+            <div class="mod-body">
+              <div class="mod-top">
+                <div class="mod-tags">
+                  <span class="mod-tag mod-tag-eval">Evaluasi</span>
+                  <span class="mod-tag mod-tag-uas">UAS</span>
+                  <span class="mod-duration"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 150 menit</span>
+                </div>
+                <div class="mod-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              </div>
+              <h3 class="mod-title">UAS — Presentasi & Portfolio</h3>
+              <p class="mod-desc">Presentasi Tim, Peer Review, Portfolio Exhibition. Penilaian akhir kualitas desain & kerja kelompok.</p>
+              <div class="mod-footer">
+                <div class="mod-subs">Ujian Final · Belum dimulai</div>
+                <div class="mod-progress-bar"><div class="mod-progress-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+            <div class="mod-visual">
+              <div class="mod-ring" data-pct="0">
+                <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--ink-7)" stroke-width="3"/></svg>
+                <span class="mod-ring-icon">🎓</span>
+              </div>
+              <div class="mod-weight">Bobot: 10%</div>
+              <span class="mod-btn mod-btn-locked">Selesaikan modul sebelumnya</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

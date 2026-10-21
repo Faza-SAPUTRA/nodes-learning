@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NODES — Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../../assets/css/sidebar.css">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- ========== APP SHELL ========== -->
+  <div class="app">
+
+    <!-- NODES Sidebar -->
+    <aside class="rail">
+      <a href="../landing/index.html" class="rail-logo">n<span class="rail-logo-text">odes</span><span class="logo-dot">.</span></a>
+      <div class="rail-section">Menu</div>
+      <nav class="rail-nav">
+        <a href="../dashboard/index.html" class="rail-item active" data-tooltip="Dashboard"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg><span class="rail-label">Dashboard</span></a>
+        <a href="../modules/index.html" class="rail-item" data-tooltip="Modul Belajar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><span class="rail-label">Modul Belajar</span></a>
+        <a href="../canvas/index.html" class="rail-item" data-tooltip="Canvas"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg><span class="rail-label">Canvas Praktik</span></a>
+        <a href="../collab/index.html" class="rail-item" data-tooltip="Kolaborasi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="rail-label">Kolaborasi</span></a>
+      </nav>
+      <div class="rail-foot">
+        <button class="rail-toggle" aria-label="Toggle sidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg><span class="rail-label">Tutup Menu</span></button>
+        <div class="rail-divider"></div>
+        <a href="../profile/index.html" class="rail-avatar-row" data-tooltip="Profil">
+          <div class="rail-avatar"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#0D9488"/><text x="18" y="23" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="13" font-weight="700">AP</text></svg></div>
+          <div class="rail-avatar-info"><span class="rail-avatar-name">Andi Prasetyo</span><span class="rail-avatar-role">Mahasiswa</span></div>
+        </a>
+      </div>
+    </aside>
+    <script src="../../assets/js/sidebar.js"></script>
+
+    <!-- MAIN CONTENT -->
+    <main class="main" id="main">
+
+      <!-- Top bar -->
+      <header class="topbar">
+        <button class="topbar-menu" id="topbarMenu" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+        <div class="topbar-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" placeholder="Cari modul, materi, atau proyek..." id="searchInput">
+          <kbd>⌘K</kbd>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-icon" aria-label="Notifikasi">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+            <span class="topbar-notif-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="content">
+
+        <!-- Welcome + Continue Learning -->
+        <section class="welcome" data-reveal>
+          <div class="welcome-text">
+            <span class="welcome-time" id="welcomeTime">Selamat pagi</span>
+            <h1 class="welcome-name">Andi <span class="wave">👋</span></h1>
+            <p class="welcome-sub">Kamu punya <strong>8 sesi</strong> yang belum selesai. Yuk lanjutkan!</p>
+          </div>
+          <div class="welcome-streak">
+            <div class="streak-ring" id="streakRing">
+              <svg viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(13,148,136,.1)" stroke-width="8"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="url(#streakGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 327" id="streakArc" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="streakGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#0D9488"/></linearGradient></defs>
+              </svg>
+              <div class="streak-inner">
+                <span class="streak-num" id="streakNum">0</span>
+                <span class="streak-label">hari streak</span>
+              </div>
+            </div>
+            <div class="streak-days">
+              <span class="sd done">S</span>
+              <span class="sd done">S</span>
+              <span class="sd done">R</span>
+              <span class="sd done">K</span>
+              <span class="sd done">J</span>
+              <span class="sd today">S</span>
+              <span class="sd">M</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Continue card — hero-level prominence -->
+        <section class="continue-card" data-reveal>
+          <div class="cc-bg"></div>
+          <div class="cc-content">
+            <div class="cc-meta">
+              <span class="cc-badge">Lanjutkan Belajar</span>
+              <span class="cc-module">Sesi 9 · Design System</span>
+            </div>
+            <h2 class="cc-title">Design System Components & UI Tokens</h2>
+            <div class="cc-progress-wrap">
+              <div class="cc-progress-bar"><div class="cc-progress-fill" id="ccFill" style="width:0%"></div></div>
+              <span class="cc-progress-pct" id="ccPct">0%</span>
+            </div>
+            <a href="#" class="cc-btn">
+              <span>Lanjutkan</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="cc-visual">
+            <!-- Color wheel SVG -->
+            <svg viewBox="0 0 200 200" class="cc-wheel" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="16"/>
+              <path d="M100 20 A80 80 0 0 1 169.28 60" fill="none" stroke="#EF4444" stroke-width="16" stroke-linecap="round"/>
+              <path d="M169.28 60 A80 80 0 0 1 169.28 140" fill="none" stroke="#F59E0B" stroke-width="16" stroke-linecap="round"/>
+              <path d="M169.28 140 A80 80 0 0 1 100 180" fill="none" stroke="#10B981" stroke-width="16" stroke-linecap="round"/>
+              <path d="M100 180 A80 80 0 0 1 30.72 140" fill="none" stroke="#3B82F6" stroke-width="16" stroke-linecap="round"/>
+              <path d="M30.72 140 A80 80 0 0 1 30.72 60" fill="none" stroke="#8B5CF6" stroke-width="16" stroke-linecap="round"/>
+              <path d="M30.72 60 A80 80 0 0 1 100 20" fill="none" stroke="#EC4899" stroke-width="16" stroke-linecap="round"/>
+              <circle cx="100" cy="100" r="40" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+              <text x="100" y="96" text-anchor="middle" fill="rgba(255,255,255,.5)" font-family="Inter" font-size="10" font-weight="600">WCAG</text>
+              <text x="100" y="112" text-anchor="middle" fill="white" font-family="Inter" font-size="14" font-weight="800">AA</text>
+            </svg>
+          </div>
+        </section>
+
+        <!-- BENTO DASHBOARD GRID -->
+        <div class="dash-grid">
+
+          <!-- Progress Overview -->
+          <div class="dash-card dash-progress" data-reveal>
+            <div class="dc-header">
+              <h3>Progress Belajar</h3>
+              <span class="dc-period">Semester ini</span>
+            </div>
+            <div class="progress-donut-wrap">
+              <svg class="progress-donut" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="48" fill="none" stroke="var(--ink-7)" stroke-width="10"/>
+                <circle cx="60" cy="60" r="48" fill="none" stroke="url(#progGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 302" id="progArc" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="progGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#0D9488"/></linearGradient></defs>
+              </svg>
+              <div class="progress-center">
+                <span class="progress-pct" id="progPct">0</span>
+                <span class="progress-of">dari 16 sesi</span>
+              </div>
+            </div>
+            <div class="progress-stats">
+              <div class="ps"><span class="ps-val">8</span><span class="ps-label">Selesai</span></div>
+              <div class="ps"><span class="ps-val">1</span><span class="ps-label">Berlangsung</span></div>
+              <div class="ps"><span class="ps-val">7</span><span class="ps-label">Belum mulai</span></div>
+            </div>
+          </div>
+
+          <!-- Quick Access Modules -->
+          <div class="dash-card dash-modules" data-reveal>
+            <div class="dc-header">
+              <h3>Modul Terbaru</h3>
+              <a href="#" class="dc-link">Lihat Semua</a>
+            </div>
+            <div class="module-list">
+              <a href="#" class="module-item">
+                <div class="mi-icon mi-icon-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div class="mi-info">
+                  <span class="mi-title">Visual Design Principles</span>
+                  <span class="mi-meta">Sesi 7 · Typography, Color Theory</span>
+                </div>
+                <div class="mi-status done">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </a>
+              <a href="#" class="module-item">
+                <div class="mi-icon mi-icon-2">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M9.5 8.5 6 12"/><path d="m15.5 9-2.5 6"/></svg>
+                </div>
+                <div class="mi-info">
+                  <span class="mi-title">Design System</span>
+                  <span class="mi-meta">Sesi 9 · Sedang dipelajari</span>
+                </div>
+                <div class="mi-status progress">60%</div>
+              </a>
+              <a href="#" class="module-item">
+                <div class="mi-icon mi-icon-3">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+                </div>
+                <div class="mi-info">
+                  <span class="mi-title">Wireframing & Sketsa</span>
+                  <span class="mi-meta">Sesi 6 · 5 sub-bab</span>
+                </div>
+                <div class="mi-status done">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </a>
+              <a href="#" class="module-item">
+                <div class="mi-icon mi-icon-4">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
+                </div>
+                <div class="mi-info">
+                  <span class="mi-title">Information Architecture</span>
+                  <span class="mi-meta">Modul 6 · Belum dimulai</span>
+                </div>
+                <div class="mi-status locked">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Activity Timeline -->
+          <div class="dash-card dash-activity" data-reveal>
+            <div class="dc-header">
+              <h3>Aktivitas Terbaru</h3>
+            </div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot tl-dot-teal"></div>
+                <div class="tl-body">
+                  <p>Menyelesaikan sub-bab <strong>Kontras Warna</strong></p>
+                  <span class="tl-time">2 jam lalu</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot tl-dot-blue"></div>
+                <div class="tl-body">
+                  <p>Membuat proyek <strong>Landing Page Redesign</strong> di Canvas</p>
+                  <span class="tl-time">5 jam lalu</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot tl-dot-purple"></div>
+                <div class="tl-body">
+                  <p>Menerima feedback dari <strong>Dosen Surya</strong></p>
+                  <span class="tl-time">Kemarin</span>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot tl-dot-green"></div>
+                <div class="tl-body">
+                  <p>Menyelesaikan modul <strong>Grid Systems</strong> 🎉</p>
+                  <span class="tl-time">2 hari lalu</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collaboration / Online now -->
+          <div class="dash-card dash-collab" data-reveal>
+            <div class="dc-header">
+              <h3>Sedang Online</h3>
+              <span class="dc-live"><span class="dc-live-dot"></span>Live</span>
+            </div>
+            <div class="collab-list">
+              <div class="collab-user">
+                <div class="cu-avatar" style="background:#0D9488">F</div>
+                <div class="cu-info">
+                  <span class="cu-name">Farah Azalea</span>
+                  <span class="cu-status">Mengerjakan Canvas — Typography</span>
+                </div>
+              </div>
+              <div class="collab-user">
+                <div class="cu-avatar" style="background:#3B82F6">R</div>
+                <div class="cu-info">
+                  <span class="cu-name">Rizky Fauzan</span>
+                  <span class="cu-status">Membaca modul Color Theory</span>
+                </div>
+              </div>
+              <div class="collab-user">
+                <div class="cu-avatar" style="background:#8B5CF6">S</div>
+                <div class="cu-info">
+                  <span class="cu-name">Siti Nurhaliza</span>
+                  <span class="cu-status">Review proyek Wireframe</span>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="collab-cta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+              Mulai Kolaborasi
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
